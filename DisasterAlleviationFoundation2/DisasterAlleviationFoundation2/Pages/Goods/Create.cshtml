@@ -1,0 +1,73 @@
+﻿@page
+@model DisasterAlleviationFoundation2.Pages.Goods.CreateModel
+@{
+}
+
+<br />
+<h2>New Good Donation</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' dat-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Goods ID</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="goodsid" value="@Model.goodsDonationsInfo.goodsid" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Date</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="date" value="@Model.goodsDonationsInfo.date" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Category</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="category" value="@Model.goodsDonationsInfo.category" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Description</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="description" value="@Model.goodsDonationsInfo.description" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Donar</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="donar" value="@Model.goodsDonationsInfo.donar" />
+        </div>
+    </div>
+
+    @if (Model.successMesage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMesage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

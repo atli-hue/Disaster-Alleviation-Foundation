@@ -1,0 +1,39 @@
+﻿@page
+@model DisasterAlleviationFoundation2.Pages.Disaster.IndexModel
+@{
+}
+
+<br />
+<h2>List of Disasters</h2>
+<a class='btn btn-primary btn-sm' href='/Disaster/Create'>New Disaster</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Disaster Id </th>
+            <th>Start Date</th>
+            <th>End Date/th>
+            <th>Location </th>
+            <th>Description</th>
+            <th>Aid Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListdisasterInfo)
+        {
+        <tr>
+            <td>@item.disasterid</td>
+            <td>@item.startdate</td>
+            <td>@item.enddate</td>
+            <td>@item.location</td>
+            <td>@item.description</td>
+            <td>@item.aidtype</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Goods/Edit?id=@item.disasterid">Edit</a>
+                <a class="btn btn-primary btn-sm" href="/Goods/Delete?id=@item.disasterid">Delete</a>
+            </td>
+
+        </tr>
+        }
+
+    </tbody>
+</table>

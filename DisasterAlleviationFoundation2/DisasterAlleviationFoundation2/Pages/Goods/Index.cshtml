@@ -1,0 +1,37 @@
+﻿@page
+@model DisasterAlleviationFoundation2.Pages.Goods.IndexModel
+@{
+}
+
+<br />
+<h2>List of Goods Donations</h2>
+<a class='btn btn-primary btn-sm' href='/Goods/Create'>New Good Donation</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Goods Id </th>
+            <th>Date</th>
+            <th>Categoory/th>
+            <th>Description </th>
+            <th>Donar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListGoodsDonationsInfo)
+        {
+            <tr>
+                <td>@item.goodsid </td>
+                <td>@item.date </td>
+                <td>@item.category </td>
+                <td>@item.description </td>
+                <td>@item.donar </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Goods/Edit?id=@item.goodsid">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Goods/Delete?id=@item.goodsid">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>

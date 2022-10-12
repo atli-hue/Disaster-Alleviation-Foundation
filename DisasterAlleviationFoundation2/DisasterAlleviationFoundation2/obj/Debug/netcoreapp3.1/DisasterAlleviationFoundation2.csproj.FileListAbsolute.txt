@@ -1,0 +1,7 @@
+C:\Users\USER\Desktop\School\APPR6312\DisasterAlleviationFoundation2\DisasterAlleviationFoundation2\obj\Debug\netcoreapp3.1\DisasterAlleviationFoundation2.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\School\APPR6312\DisasterAlleviationFoundation2\DisasterAlleviationFoundation2\obj\Debug\netcoreapp3.1\DisasterAlleviationFoundation2.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\School\APPR6312\DisasterAlleviationFoundation2\DisasterAlleviationFoundation2\obj\Debug\netcoreapp3.1\DisasterAlleviationFoundation2.AssemblyInfo.cs
+C:\Users\USER\Desktop\School\APPR6312\DisasterAlleviationFoundation2\DisasterAlleviationFoundation2\obj\Debug\netcoreapp3.1\DisasterAlleviationFoundation2.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\School\APPR6312\DisasterAlleviationFoundation2\DisasterAlleviationFoundation2\obj\Debug\netcoreapp3.1\DisasterAlleviationFoundation2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USER\Desktop\School\APPR6312\DisasterAlleviationFoundation2\DisasterAlleviationFoundation2\obj\Debug\netcoreapp3.1\DisasterAlleviationFoundation2.RazorAssemblyInfo.cache
+C:\Users\USER\Desktop\School\APPR6312\DisasterAlleviationFoundation2\DisasterAlleviationFoundation2\obj\Debug\netcoreapp3.1\DisasterAlleviationFoundation2.RazorAssemblyInfo.cs

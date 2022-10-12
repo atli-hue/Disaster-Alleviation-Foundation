@@ -1,0 +1,35 @@
+﻿@page
+@model DisasterAlleviationFoundation2.Pages.Monetary.IndexModel
+@{
+}
+
+<br />
+<h2>List of Money Donations</h2>
+<a class='btn btn-primary btn-sm' href='/Monetary/Create'>New Money Donation</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Donar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listMonetary)
+        {
+            <tr>
+                <td>@item.monetaryid </td>
+                <td>@item.date </td>
+                <td>@item.amount </td>
+                <td>@item.donar </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Monetary/Edit?id=@item.monetaryid">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Monetary/Delete?id=@item.monetaryid">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
