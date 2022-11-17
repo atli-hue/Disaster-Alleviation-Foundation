@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DisasterAlleviationFoundationDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Disastertbl">
+          <Key>
+            <PropertyRef Name="DisasterID" />
+          </Key>
+          <Property Name="DisasterID" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="AidType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GoodsDonationstbl">
+          <Key>
+            <PropertyRef Name="GoodsID" />
+          </Key>
+          <Property Name="GoodsID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="NumberOfItems" Type="int" />
+          <Property Name="Category" Type="varchar" MaxLength="50" />
+          <Property Name="Donar" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MonetaryDonationsTbl">
+          <Key>
+            <PropertyRef Name="MonetaryID" />
+          </Key>
+          <Property Name="MonetaryID" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="Donar" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="DisasterAlleviationFoundationDBModelStoreContainer">
+          <EntitySet Name="Disastertbl" EntityType="Self.Disastertbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GoodsDonationstbl" EntityType="Self.GoodsDonationstbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MonetaryDonationsTbl" EntityType="Self.MonetaryDonationsTbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DisasterAlleviationFoundationDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Disastertbl">
+          <Key>
+            <PropertyRef Name="DisasterID" />
+          </Key>
+          <Property Name="DisasterID" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AidType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="GoodsDonationstbl">
+          <Key>
+            <PropertyRef Name="GoodsID" />
+          </Key>
+          <Property Name="GoodsID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="NumberOfItems" Type="Int32" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Donar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MonetaryDonationsTbl">
+          <Key>
+            <PropertyRef Name="MonetaryID" />
+          </Key>
+          <Property Name="MonetaryID" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="Donar" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DisasterAlleviationFoundationDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Disastertbls" EntityType="Self.Disastertbl" />
+          <EntitySet Name="GoodsDonationstbls" EntityType="Self.GoodsDonationstbl" />
+          <EntitySet Name="MonetaryDonationsTbls" EntityType="Self.MonetaryDonationsTbl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DisasterAlleviationFoundationDBModelStoreContainer" CdmEntityContainer="DisasterAlleviationFoundationDBEntities">
+          <EntitySetMapping Name="Disastertbls">
+            <EntityTypeMapping TypeName="DisasterAlleviationFoundationDBModel.Disastertbl">
+              <MappingFragment StoreEntitySet="Disastertbl">
+                <ScalarProperty Name="DisasterID" ColumnName="DisasterID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AidType" ColumnName="AidType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GoodsDonationstbls">
+            <EntityTypeMapping TypeName="DisasterAlleviationFoundationDBModel.GoodsDonationstbl">
+              <MappingFragment StoreEntitySet="GoodsDonationstbl">
+                <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="NumberOfItems" ColumnName="NumberOfItems" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Donar" ColumnName="Donar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MonetaryDonationsTbls">
+            <EntityTypeMapping TypeName="DisasterAlleviationFoundationDBModel.MonetaryDonationsTbl">
+              <MappingFragment StoreEntitySet="MonetaryDonationsTbl">
+                <ScalarProperty Name="MonetaryID" ColumnName="MonetaryID" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Donar" ColumnName="Donar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
